@@ -1,0 +1,1215 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="iCHASE Education Consultancy helps students explore college admissions and courses across South India.">
+  <title>iCHASE | Education Consultancy</title>
+
+  <style>
+    :root {
+      --primary: #861b32;
+      --dark: #571020;
+      --light: #fff7f8;
+      --white: #ffffff;
+      --text: #29212a;
+      --muted: #716771;
+      --border: #eadde0;
+      --shadow: 0 12px 35px rgba(87, 16, 32, 0.09);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, select, textarea {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-heading {
+      max-width: 680px;
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.2;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(28px, 4vw, 39px);
+      margin: 12px 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 13px 22px;
+      border-radius: 7px;
+      border: 1px solid var(--primary);
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      color: var(--primary);
+      background: white;
+    }
+
+    .btn-outline:hover {
+      background: var(--light);
+    }
+
+    /* Navigation */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,.97);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--primary);
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+
+    .brand small {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: none;
+      color: var(--primary);
+      font-size: 27px;
+    }
+
+    /* Hero */
+
+    .hero {
+      background:
+        radial-gradient(circle at 90% 15%, #f1d7dd 0, transparent 28%),
+        linear-gradient(115deg, #fff7f8, #fff 65%);
+      padding: 90px 0;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 5vw, 62px);
+      letter-spacing: -1.5px;
+      margin: 17px 0;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero-copy {
+      color: var(--muted);
+      max-width: 560px;
+      font-size: 17px;
+      margin-bottom: 26px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-note {
+      margin-top: 24px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .hero-visual {
+      min-height: 370px;
+      border-radius: 22px;
+      background: linear-gradient(145deg, #6d1026, #a72b48);
+      color: white;
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow);
+    }
+
+    .visual-label {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: .85;
+    }
+
+    .hero-visual h2 {
+      font-size: 34px;
+      margin: 15px 0;
+    }
+
+    .region-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 20px;
+    }
+
+    .region-list span {
+      border: 1px solid rgba(255,255,255,.4);
+      padding: 7px 12px;
+      border-radius: 30px;
+      font-size: 13px;
+    }
+
+    .visual-bottom {
+      border-top: 1px solid rgba(255,255,255,.25);
+      padding-top: 20px;
+      margin-top: 35px;
+      font-size: 14px;
+    }
+
+    /* Services */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .service-card,
+    .destination-card,
+    .reason-card {
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 25px;
+      background: white;
+      transition: .2s ease;
+    }
+
+    .service-card:hover,
+    .destination-card:hover,
+    .reason-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-icon {
+      width: 49px;
+      height: 49px;
+      border-radius: 12px;
+      background: var(--light);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3,
+    .reason-card h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p,
+    .reason-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Destinations */
+
+    .destinations,
+    .testimonials {
+      background: var(--light);
+    }
+
+    .filter-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .filter-btn {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 9px 17px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+
+    .destination-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .destination-card {
+      padding: 24px;
+    }
+
+    .destination-card[hidden] {
+      display: none;
+    }
+
+    .destination-card .state {
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .destination-card h3 {
+      margin: 8px 0;
+      font-size: 22px;
+    }
+
+    .destination-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .destination-card .explore {
+      display: inline-block;
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 700;
+      margin-top: 17px;
+    }
+
+    /* Why choose iCHASE */
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .reason-number {
+      color: #d7a2af;
+      font-size: 29px;
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    /* Testimonials */
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .testimonial-card {
+      padding: 25px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+    }
+
+    .testimonial-card .quote {
+      color: var(--primary);
+      font-size: 28px;
+      font-weight: 800;
+    }
+
+    .testimonial-card p {
+      color: var(--muted);
+      margin: 12px 0 20px;
+      font-size: 14px;
+    }
+
+    .testimonial-card strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .testimonial-card small {
+      color: var(--muted);
+    }
+
+    .demo-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 20px;
+    }
+
+    /* Contact */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 45px;
+      align-items: start;
+    }
+
+    .contact-info h3 {
+      font-size: 28px;
+      margin: 12px 0;
+    }
+
+    .contact-info > p {
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .contact-detail {
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-detail strong {
+      display: block;
+      color: var(--primary);
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .contact-detail span {
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-form {
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-form h3 {
+      font-size: 23px;
+      margin-bottom: 20px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .field {
+      margin-bottom: 16px;
+    }
+
+    .field label {
+      display: block;
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 7px;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d9cbd0;
+      border-radius: 7px;
+      outline: none;
+      background: white;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(134,27,50,.08);
+    }
+
+    .field textarea {
+      min-height: 105px;
+      resize: vertical;
+    }
+
+    .contact-form .btn {
+      width: 100%;
+    }
+
+    .form-note {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 12px;
+      text-align: center;
+    }
+
+    /* Footer */
+
+    footer {
+      background: #32101a;
+      color: white;
+      padding: 35px 0;
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: #e5cbd2;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* WhatsApp floating button */
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 99;
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      box-shadow: 0 5px 20px rgba(0,0,0,.2);
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    .whatsapp-float:hover {
+      background: #128C7E;
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 900px) {
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-grid {
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .navbar {
+        min-height: 70px;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        padding: 20px 5%;
+        background: white;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links li a {
+        display: block;
+        padding: 12px 0;
+        font-size: 15px;
+      }
+
+      .nav-links .btn {
+        margin-top: 8px;
+      }
+
+      .hero {
+        padding: 60px 0;
+      }
+
+      .hero-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 310px;
+      }
+
+      .destination-grid,
+      .why-grid,
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 62px 0;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 39px;
+      }
+
+      .contact-form {
+        padding: 20px;
+      }
+
+      .brand {
+        font-size: 21px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar container">
+      <a class="brand" href="#home" aria-label="iCHASE home">
+        <img src="logo.png" alt="iCHASE logo"
+             onerror="this.style.display='none'">
+        <span>iCHASE<small>EDUCATION CONSULTANCY</small></span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle"
+              aria-label="Open navigation" aria-expanded="false">☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#why-us">Why iCHASE</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a class="btn btn-primary" href="#contact">Get Guidance</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Your education journey starts here</div>
+          <h1>Your Dreams.<br>Your Education.<br><span>Your Future.</span></h1>
+
+          <p class="hero-copy">
+            Find the right college and course with personalized educational
+            guidance. iCHASE helps students explore admission opportunities
+            across South India.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#destinations">Explore Destinations</a>
+            <a class="btn btn-outline" href="#contact">Book a Consultation</a>
+          </div>
+
+          <p class="hero-note">
+            College admissions • Course selection • Career guidance
+          </p>
+        </div>
+
+        <div class="hero-visual">
+          <div>
+            <div class="visual-label">Explore your opportunities</div>
+            <h2>Find a college that fits your future.</h2>
+            <p>Personal guidance for your next academic step.</p>
+
+            <div class="region-list">
+              <span>Kerala</span>
+              <span>Karnataka</span>
+              <span>Tamil Nadu</span>
+              <span>Telangana</span>
+              <span>Andhra Pradesh</span>
+            </div>
+          </div>
+
+          <div class="visual-bottom">
+            Let us help you make a more informed education decision.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">How we help</div>
+          <h2>Our Education Services</h2>
+          <p>Practical support to help you make informed decisions about your education.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon">01</div>
+            <h3>College Admissions</h3>
+            <p>Explore suitable colleges and understand their admission requirements.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">02</div>
+            <h3>Course Selection</h3>
+            <p>Compare courses based on your interests, qualifications and goals.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">03</div>
+            <h3>Career Counselling</h3>
+            <p>Discuss your interests and identify education paths worth considering.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">04</div>
+            <h3>Application Assistance</h3>
+            <p>Get guidance on application steps, documents and admission deadlines.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESTINATIONS -->
+    <section class="section destinations" id="destinations">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Explore South India</div>
+          <h2>Study Destinations</h2>
+          <p>
+            Explore popular education hubs across South India. College
+            availability and admission criteria vary by institution.
+          </p>
+        </div>
+
+        <div class="filter-list" aria-label="Filter destinations">
+          <button class="filter-btn active" data-filter="all">All Regions</button>
+          <button class="filter-btn" data-filter="kerala">Kerala</button>
+          <button class="filter-btn" data-filter="karnataka">Karnataka</button>
+          <button class="filter-btn" data-filter="tamil-nadu">Tamil Nadu</button>
+          <button class="filter-btn" data-filter="andhra">Andhra Pradesh</button>
+          <button class="filter-btn" data-filter="telangana">Telangana</button>
+        </div>
+
+        <div class="destination-grid">
+          <article class="destination-card" data-state="kerala">
+            <div class="state">Kerala</div>
+            <h3>Kochi</h3>
+            <p>Explore higher education and professional course options.</p>
+            <a class="explore" href="#contact">Ask about admissions →</a>
+          </article>
+
+          <article class="destination-card" data-state="kerala">
+            <div class="state">Kerala</div>
+            <h3>Kozhikode</h3>
+            <p>Explore colleges and courses suited to your academic goals.</p>
+            <a class="explore" href="#contact">Ask about admissions →</a>
+          </article>
+
+          <article class="destination-card" data-state="kerala">
+            <div class="state">Kerala</div>
+            <h3>Kannur & Thrissur</h3>
+            <p>Get guidance on regional college and course options.</p>
+            <a class="explore" href="#contact">Ask about admissions →</a>
+          </article>
+
+          <article class="destination-card" data-state="karnataka">
+            <div class="state">Karnataka</div>
+            <h3>Mangalore</h3>
+            <p>Explore undergraduate and professional education options.</p>
+            <a class="explore" href="#contact">Ask about admissions →</a>
+          </article>
+
+          <article class="destination-card" data-state="karnataka">
+            <div class="state">Karnataka</div>
+            <h3>Bangalore</h3>
+            <p>Discover courses across technology, business and other fields.</p>
+            <a class="explore" href="#contact">Ask about admissions →</a>
+          </article>
+
+          <article class="destination-card" data-state="karnataka">
+            <div class="state">Karnataka</div>
+            <h3>Mysuru & Manipal</h3>
+            <p>Compare study options and college admission requirements.</p>
+            <a class="explore" href="#contact">Ask about admissions →</a>
+          </article>
+
+          <article class="destination-card" data-state="tamil-nadu">
+            <div class="state">Tamil Nadu</div>
+            <h3>Chennai</h3>
+            <p>Explore higher education opportunities in a major academic hub.</p>
+            <a class="explore" href="#contact">Ask about admissions →</a>
+          </article>
+
+          <article class="destination-card" data-state="tamil-nadu">
+            <div class="state">Tamil Nadu</div>
+            <h3>Coimbatore & Madurai</h3>
+            <p>Find courses that align with your interests and qualifications.</p>
+            <a class="explore" href="#contact">Ask about admissions →</a>
+          </article>
+
+          <article class="destination-card" data-state="andhra">
+            <div class="state">Andhra Pradesh</div>
+            <h3>Vijayawada & Visakhapatnam</h3>
+            <p>Learn about local college options and application processes.</p>
+            <a class="explore" href="#contact">Ask about admissions →</a>
+          </article>
+
+          <article class="destination-card" data-state="telangana">
+            <div class="state">Telangana</div>
+            <h3>Hyderabad</h3>
+            <p>Explore academic pathways and course options across disciplines.</p>
+            <a class="explore" href="#contact">Ask about admissions →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY ICHASE -->
+    <section class="section" id="why-us">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Why choose us</div>
+          <h2>Education Guidance That Starts With You</h2>
+          <p>We aim to make your college search easier through clear information and individual support.</p>
+        </div>
+
+        <div class="why-grid">
+          <article class="reason-card">
+            <div class="reason-number">01</div>
+            <h3>Personalized Guidance</h3>
+            <p>Recommendations should reflect your interests, academic background and future plans.</p>
+          </article>
+
+          <article class="reason-card">
+            <div class="reason-number">02</div>
+            <h3>Clear Information</h3>
+            <p>Understand admission steps, eligibility criteria and documents before applying.</p>
+          </article>
+
+          <article class="reason-card">
+            <div class="reason-number">03</div>
+            <h3>Student-Focused Support</h3>
+            <p>Get help comparing options and navigating the application process.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Student experiences</div>
+          <h2>Testimonials</h2>
+          <p>Real student feedback can help future students understand your service.</p>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="testimonial-card">
+            <div class="quote">“</div>
+            <p>Replace this sample text with genuine feedback from a student who used your consultancy.</p>
+            <strong>Student Name</strong>
+            <small>College / Course</small>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="quote">“</div>
+            <p>Add a real testimonial describing the student's experience with course or college selection.</p>
+            <strong>Student Name</strong>
+            <small>College / Course</small>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="quote">“</div>
+            <p>Use only feedback you have permission to publish. Avoid presenting placeholder text as a real review.</p>
+            <strong>Student Name</strong>
+            <small>College / Course</small>
+          </article>
+        </div>
+
+        <p class="demo-note">
+          Demo content: replace these placeholders with genuine testimonials before publishing.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Let's talk about your future</div>
+          <h2>Book a Consultation</h2>
+          <p>Tell us what you want to study, and we can discuss your next steps.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="eyebrow">Contact iCHASE</div>
+            <h3>Let's find your next step.</h3>
+            <p>
+              Reach out for guidance about courses, colleges and admission
+              requirements across South India.
+            </p>
+
+            <div class="contact-detail">
+              <strong>Phone / WhatsApp</strong>
+              <span>7907372069</span>
+            </div>
+
+            <div class="contact-detail">
+              <strong>Email</strong>
+              <span>Replace with your official email address</span>
+            </div>
+
+            <div class="contact-detail">
+              <strong>Office</strong>
+              <span>Replace with your office location</span>
+            </div>
+
+            <a class="btn btn-outline"
+               href="https://wa.me/917907372069"
+               target="_blank" rel="noopener noreferrer"
+               style="margin-top:22px;">
+              Chat with iCHASE on WhatsApp
+            </a>
+          </div>
+
+          <form class="contact-form" id="consultationForm">
+            <h3>Request a consultation</h3>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Full name *</label>
+                <input id="name" name="name" required
+                       maxlength="100" autocomplete="name"
+                       placeholder="Your name">
+              </div>
+
+              <div class="field">
+                <label for="phone">Phone number *</label>
+                <input id="phone" name="phone" type="tel" required
+                       maxlength="20" autocomplete="tel"
+                       pattern="[0-9+() -]{7,20}"
+                       placeholder="Your phone number">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="course">Interested course *</label>
+                <select id="course" name="course" required>
+                  <option value="">Select a course</option>
+                  <option>BCA / Computer Applications</option>
+                  <option>B.Tech / Engineering</option>
+                  <option>BBA / Business Administration</option>
+                  <option>MBBS / Medical</option>
+                  <option>Nursing / Allied Health</option>
+                  <option>Arts / Science / Commerce</option>
+                  <option>MBA / Postgraduate</option>
+                  <option>Other</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="location">Preferred region *</label>
+                <select id="location" name="location" required>
+                  <option value="">Select a region</option>
+                  <option>Kerala</option>
+                  <option>Karnataka</option>
+                  <option>Tamil Nadu</option>
+                  <option>Andhra Pradesh</option>
+                  <option>Telangana</option>
+                  <option>Not decided yet</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">Your question (optional)</label>
+              <textarea id="message" name="message" maxlength="1000"
+                        placeholder="Tell us about your education goals..."></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit">
+              Prepare Consultation Request
+            </button>
+
+            <p class="form-note">
+              WhatsApp will open with your enquiry. Review it and press Send.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-content">
+      <div>
+        <strong>iCHASE Education Consultancy</strong>
+        <p>Your Dreams. Your Education. Your Future.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <p>© <span id="year"></span> iCHASE. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp button -->
+  <a class="whatsapp-float"
+     href="https://wa.me/917907372069"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Chat with iCHASE on WhatsApp">WA</a>
+
+  <script>
+    // iCHASE WhatsApp configuration
+    // India country code +91 followed by the consultancy number.
+    const ICHASE_WHATSAPP_NUMBER = "917907372069";
+
+    // Mobile navigation
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // South Indian destination filters
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const destinationCards = document.querySelectorAll(".destination-card");
+
+    filterButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        filterButtons.forEach(function (item) {
+          item.classList.remove("active");
+        });
+
+        button.classList.add("active");
+        const selected = button.dataset.filter;
+
+        destinationCards.forEach(function (card) {
+          card.hidden =
+            selected !== "all" && card.dataset.state !== selected;
+        });
+      });
+    });
+
+    // Consultation form -> WhatsApp
+    const form = document.getElementById("consultationForm");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      if (!form.reportValidity()) {
+        return;
+      }
+
+      const data = new FormData(form);
+
+      const name = String(data.get("name") || "").trim();
+      const phone = String(data.get("phone") || "").trim();
+      const course = String(data.get("course") || "");
+      const location = String(data.get("location") || "");
+      const message = String(data.get("message") || "").trim();
+
+      const requestText =
+`Hello iCHASE Education Consultancy!
+
+I would like to request an education consultation.
+
+Student Name: ${name}
+Student Phone Number: ${phone}
+Interested Course: ${course}
+Preferred Region: ${location}
+Message: ${message || "Not provided"}
+
+Please contact me regarding college admissions in South India.
+
+Thank you.`;
+
+      const whatsappURL =
+        "https://wa.me/" +
+        ICHASE_WHATSAPP_NUMBER +
+        "?text=" +
+        encodeURIComponent(requestText);
+
+      // Open WhatsApp; the student must press Send.
+      window.open(whatsappURL, "_blank", "noopener,noreferrer");
+    });
+
+    // Current year in footer
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
